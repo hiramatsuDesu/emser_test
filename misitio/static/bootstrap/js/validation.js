@@ -47,3 +47,10 @@ if (alertTrigger) {
     appendAlert('Complete correctamente los campos', 'por favor')
   })
 }
+
+function abrir_modal_edicion(url){
+  console.log("ingresa");
+  $('#edicion').load(url, function(){
+    $(this).modal('show');
+  });
+}

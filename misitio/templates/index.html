@@ -1,1 +1,89 @@
-<h1>Hola mundo</h1>
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Creación de usuarios, alta usuarios mediante un formulario y luego una lista de usuarios">
+    <meta name="keywords" content="usuarios django python alta ">
+    <title>Q-Order Test</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/style.css' %}" rel="stylesheet">
+
+    {% block extra_css %}{% endblock extra_css %}
+
+  </head>
+  <body>
+
+   <section id="cuerpo">
+    
+    <section class="container">
+        <div class="row">
+            <div class="col-2" id="titulo">
+               
+            </div>
+            <div class="col-8" id="titulo">
+                <h1 id="titulo">Q-Order Test</h1>
+            </div>
+            <div class="col-2" id="titulo">
+
+                <img src="{% static 'images/usuarios.png' %}" width="30%">
+                <br>
+                <p>Gestión de Usuarios</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-2" id="nav">
+               
+            </div>
+            <div class="col-8" id="nav">
+                <div id="navegacion">
+                  <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a href="{% url 'persona:home' %}" style type="text/css" text-decoration: none>
+                            <button class="btn btn-outline-success me-2" type="button">Home</button>
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'persona:editar' %}" style type="text/css" text-decoration: none>
+                            <button class="btn btn-outline-success me-2" type="button">Editar Usuarios</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'persona:ver_lista' %}" style type="text/css" text-decoration: none>
+                            <button class="btn btn-outline-success me-2" type="button">Ver Lista de Usuarios</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'persona:crear' %}" style type="text/css" text-decoration: none>
+                            <button class="btn btn-outline-success me-2" type="button">Crear Usuarios</button>
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="col-2" id="nav">
+                
+            </div>
+        </div>
+    </section>
+
+    {% block main %}
+
+    {% endblock main %}
+
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/validation.js' %}"></script>
+    {% block extra_js %}{% endblock extra_js %}
+</section>
+  </body>
+</html>
+
+

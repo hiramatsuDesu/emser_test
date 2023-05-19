@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+{% load static %}
+
+ {% block main %}
+
+ <section class="container">
+    <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+
+            <p class="text-center">
+            <img src="{% static 'images/info.png' %}" width="20%">
+            </p>
+
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+</section>
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <p class="text-center">
+
+                <h2 id="lista"> Detalle del usuario: {{persona.nombre}}</h2>
+                </p>
+          
+                <div id="info">
+                <div class="card border-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header bg-transparent border-success">Nombre: {{persona.nombre}} </div>
+                    <div class="card-body text-success">
+                      <h5 class="card-title">Información</h5>
+                      <p class="card-text">A continuación se detalla la información personal del usuario:{{persona.nombre}} .</p>
+                      <ul class="list-group">
+                        
+                      
+                        <li class="list-group-item list-group-item-primary"> <b> Nombre: </b> {{persona.nombre}}</li>
+                        <li class="list-group-item list-group-item-secondary"><b>Apellido: </b>{{persona.apellido}}</li>
+                        <li class="list-group-item list-group-item-success"><b>E-mail: </b> {{persona.mail}}</li>
+                        <li class="list-group-item list-group-item-danger"> <b> Id: </b> {{persona.pk}} </li>
+                      </ul>
+                     
+                    </div>
+                    <div class="card-footer bg-transparent border-success"> {{persona.nombre}} {{persona.apellido}} </div>
+                    
+                  </div>
+                </div>
+                <p class="text-center">
+                    <a href="{% url 'persona:ver_lista' %}">
+                <button type="button" class="btn btn-light">Volver</button>
+                    </a>
+            </p>
+
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+    </section>
+
+
+    {% endblock main %}

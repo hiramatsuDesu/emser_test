@@ -1,0 +1,62 @@
+{% extends 'index.html'%}
+
+{% load static %}
+
+ {% block main %}
+<section class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-6">
+            <!-- Button trigger modal -->
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Ejercicio
+                </button>
+
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content modal-dialog-scrollable">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Ejercicio Práctico Q-Order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-dialog-scrollable">
+            <h2>Práctica Django y Python</h2>
+
+            <p>
+                El mismo consiste en la implementación de los métodos CRUD para dar de alta, baja, modificar y listar usuarios.
+            </p>
+
+            <p>
+                Para ello se debe crear el modelo de usuario con campos como Nombre, Apellido y Mail. Los campos Nombre y Apellido no deben admitir números por lo que se implementa Javascript para la validación de formularios.
+            </p>
+
+            <p>
+                Se solicita la implementación de un navbar tipo menu y a la vez la herencia de estilos con bootstrap y hojas de estilo en cascada como css.
+            </p>
+
+            <p>
+                Se solicita mayor aspecto estético y la implementación de un modal de bootstrap
+            </p>
+
+            <p class="text-center">
+                <img src="{% static 'images/usuarios.png' %}" width="30%" class="rounded-circle bg-light">
+            </p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock main %}

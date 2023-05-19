@@ -2,22 +2,18 @@
 {% load static %}
 
  {% block main %}
-
     <section class="container">
         <div class="row">
             <div class="col-2">
             </div>
             <div class="col-8">
-                <h2 id="lista">
-                <img src="{% static 'images/lista.png' %}" width="8%">   
-                Lista de Usuarios 
-              </h2>
+                <h2> Lista de Usuarios </h2>
                 <div class="card">
                     <h5 class="card-header">Usuarios</h5>
                     <div class="card-body">
-                      <h5 class="card-title">Lista de todos los usuarios creados</h5>
+                      <h5 class="card-title">Evaluación Q-Order Python - Django</h5>
                       <p class="card-text">
-                        <b>Ver detalle: </b>Para ver la información de un usuario en particular.
+                        2- En una lista mostrar los usuarios creados
                       </p>
                     
                       <table class="table">
@@ -37,12 +33,12 @@
                             <td> {{per.apellido}}</td>
                             <td> {{per.mail}}</td>
                             <td>
-                                <a href="{% url 'persona:ver_usuario' per.pk %}">
-                                  <button type="button" class="btn btn-outline-success">
-                                    <img src="{% static 'images/detalle.png' %}" width="20%">
-                                   Ver Detalle
+                              
+                                <button onclick="abrir_modal_edicion('{% url 'persona:actualizar' per.pk %}');" class="btn btn-primary">
+                                    editar
                                   </button>
                                 </a>
+                                  
                             </td>
                           </tr>
     
@@ -62,5 +58,12 @@
             </div>
         </div>
     </section>
+
+
+    <div class="modal fade" id="edicion" role="dialog">
+
+    </div>
+
+
 
     {% endblock main %}
