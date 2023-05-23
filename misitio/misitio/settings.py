@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     "persona.apps.PersonaConfig",
-    'crispy_forms'
 ]
 
-CRISPI_TEMPLATE_PACK = 'boostrap4'
+CRISPY_TEMPLATE_PACK = [BASE_DIR/'static/bootstrap/css']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -9,7 +9,7 @@ urlpatterns = [
     path('borrar/<int:pk>', borrarUsuario, name='borrar'),
     path('lista', ver_lista_usuarios, name='ver_lista'),
     path('ver/<int:pk>', ver_detalle_usuario, name='ver_usuario'),
-    path('modificar', editar_usuario, name='editar'),
-    path('edita/<int:pk>', actualizar_usuario, name='actualizar')
-    #path('lista', lista_usuarios)
+    path('listaedicion', vista_editar, name='actualizar'),
+    path('editar/<int:pk>', fun_editar, name='editaru'),
+    path('editarus/<int:pk>', editarUsuario, name='editarus'),
 ]

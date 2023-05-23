@@ -1,0 +1,19 @@
+<div class="modal-dialog modal-lg" role="document">
+
+    <div class="modal-content">
+    
+    <div class="modal-header">
+    </div>
+
+    <div class="modal-body">
+    
+        <form action="{% url 'persona:editarus' pk=per.pk %}" method='post'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">enviar</button>
+        </form>
+    
+    </div>
+    </div>
+
+</dvi>

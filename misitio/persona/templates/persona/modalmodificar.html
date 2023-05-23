@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load static %}
+
+ {% block main %}
+
+    <section class="container">
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <h2 id="lista">Nuevo usuario </h2>
+
+                <div class="card">
+                    <h5 class="card-header">Ingrese Datos</h5>
+                    <div class="card-body">
+                      <p class="card-text">
+                        Complete los datos del nuevo Usuario
+                      </p>
+                        <p class="text-center">
+                        <img src="{% static 'images/agregar.png' %}" width="20%">
+                        </p>
+                        
+                      
+                      <div id="liveAlertPlaceholder"></div>
+                      <div id="formulario">
+                        <form action="{% url 'persona:editarus' object.id %}" method='post' name="formulario" onsubmit="return validar_campo(formulario)">
+                        {% csrf_token %}
+    
+                        {{ form.as_p }}
+    
+                        <button type="submit" class="btn btn-light">Enviar</button>
+                      </form>
+                    </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+    </section>
+
+</br>
+</br>
+</br>
+
+  
+
+
+    {% endblock main %}

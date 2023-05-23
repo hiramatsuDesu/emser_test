@@ -2,18 +2,22 @@
 {% load static %}
 
  {% block main %}
+
     <section class="container">
         <div class="row">
             <div class="col-2">
             </div>
             <div class="col-8">
-                <h2> Lista de Usuarios </h2>
+                <h2 id="lista">
+                <img src="{% static 'images/lista.png' %}" width="8%">   
+                Lista de Usuarios 
+              </h2>
                 <div class="card">
                     <h5 class="card-header">Usuarios</h5>
                     <div class="card-body">
-                      <h5 class="card-title">Evaluación Q-Order Python - Django</h5>
+                      <h5 class="card-title">Lista de todos los usuarios creados</h5>
                       <p class="card-text">
-                        2- En una lista mostrar los usuarios creados
+                        <b>Ver detalle: </b>Para ver la información de un usuario en particular.
                       </p>
                     
                       <table class="table">
@@ -27,18 +31,18 @@
                         </thead>
                         <tbody class="table-group-divider">
     
-                            {% for per in persona_lista %}
+                            {% for per in per_lista %}
                           <tr>
                             <td>{{per.nombre}}</td>
                             <td> {{per.apellido}}</td>
                             <td> {{per.mail}}</td>
+                           
                             <td>
-                              
-                                <button onclick="abrir_modal_edicion('{% url 'persona:actualizar' per.pk %}');" class="btn btn-primary">
-                                    editar
+                          
+                                  <button onclick="abrir_modal_edicion('{% url 'persona:editaru' per.pk%}')"  class="btn btn-outline-success">
+                                  <img src="{% static 'images/editar.png' %}" width="20%"> Editar
                                   </button>
-                                </a>
-                                  
+                        
                             </td>
                           </tr>
     
@@ -49,21 +53,13 @@
 
                     </div>
                 </div>
-
-
-
-                
             </div>
             <div class="col-2">
             </div>
         </div>
     </section>
 
-
-    <div class="modal fade" id="edicion" role="dialog">
-
-    </div>
-
-
+    <div class="modal face" id="edicion" role="dialog">
 
     {% endblock main %}
+

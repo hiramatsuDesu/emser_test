@@ -49,6 +49,7 @@ if (alertTrigger) {
 }
 
 function abrir_modal_edicion(url){
+  var $ =jQuery.noConflict();
   console.log("ingresa");
   $('#edicion').load(url, function(){
     $(this).modal('show');
