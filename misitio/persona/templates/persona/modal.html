@@ -1,19 +1,44 @@
-<div class="modal-dialog modal-lg" role="document">
+
+{% load static %}
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'bootstrap/css/style.css' %}" rel="stylesheet">
+
+
+<div class="modal-dialog modal-lg" role="document" id="modal">
 
     <div class="modal-content">
     
-    <div class="modal-header">
+        <div class="modal-header">
+            <p class="text-start">
+            <img src="{% static 'images/edicion.png' %}" width="15%">
+            Complete los campos que desea editar
+            </p>
+        </div>
+
+        <div class="modal-body">
+        
+            <div id="formodal">
+                <form action="{% url 'persona:editarus' pk=per.pk %}" method='post' name="formulario" onsubmit="return  validar_campo(formulario)">
+                    {% csrf_token %}
+
+                    {{form.as_p}}
+                    
+                    <button type="submit" class="btn btn-outline-success" id="liveAlertBtn" >enviar</button>
+                    
+                </form>
+        
+            </div>
+
+
+        </div>
+
+        <div class="modal-footer">
+            <div id="liveAlertPlaceholder"></div>
+        </div>
     </div>
 
-    <div class="modal-body">
-    
-        <form action="{% url 'persona:editarus' pk=per.pk %}" method='post'>
-            {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit">enviar</button>
-        </form>
-    
-    </div>
-    </div>
+</div>
 
-</dvi>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/validation.js' %}"></script>

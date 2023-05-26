@@ -60,6 +60,12 @@ crear.html
     background-color: rgb(186, 216, 206);
 }
 
+#formodal{
+    background-color: aquamarine;
+    border: 1px solid salmon;
+    
+}
+
 section{
     padding: 10px;
 }

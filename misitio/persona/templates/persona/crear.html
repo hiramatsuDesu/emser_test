@@ -22,13 +22,14 @@
                         
                       
                       <div id="liveAlertPlaceholder"></div>
+                      
                       <div id="formulario">
                         <form method='post' name="formulario" onsubmit="return validar_campo(formulario)">
                         {% csrf_token %}
     
                         {{ form.as_p }}
     
-                        <button type="submit" class="btn btn-light">Enviar</button>
+                        <button type="submit" class="btn btn-outline-success" id="liveAlertBtn">Enviar</button>
                       </form>
                     </div>
 
